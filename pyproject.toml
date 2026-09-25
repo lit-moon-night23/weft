@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weft"
+version = "0.0.1"
+description = "Simulator, energy model, and benchmark suite for spatial compute-in-memory accelerators."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "Pradipto Shivam" }]
+keywords = ["compute-in-memory", "accelerator", "simulator", "hardware-software co-design", "dataflow"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Hardware",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pyyaml>=6.0",
+    "jsonschema>=4.0",
+]
+
+[project.optional-dependencies]
+torch = ["torch>=2.3"]
+onnx = ["onnx>=1.15"]
+analysis = ["pandas>=2.0", "matplotlib>=3.7"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+weft = "weft.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["weft*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

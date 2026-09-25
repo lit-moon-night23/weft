@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use Weft in your research, please cite it as below."
+title: "Weft: An Open Simulator and Benchmark Suite for Spatial Compute-in-Memory Accelerators"
+type: software
+authors:
+  - family-names: Shivam
+    given-names: Pradipto
+version: 0.0.1
+license: Apache-2.0
+keywords:
+  - compute-in-memory
+  - accelerator simulation
+  - hardware-software co-design
